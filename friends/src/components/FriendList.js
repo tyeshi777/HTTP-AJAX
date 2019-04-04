@@ -6,7 +6,8 @@ const FriendList = props => {
       {props.friends.map(friend => (
         <div>
           <h3>name: {friend.name}</h3>
-          <h2>email: {friend.email}</h2>
+          <h4>age: {friend.age}</h4>
+          <h4>email: {friend.email}</h4>
         </div>
       ))}
     </div>

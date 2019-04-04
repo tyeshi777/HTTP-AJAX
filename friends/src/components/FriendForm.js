@@ -8,10 +8,25 @@ class FriendForm extends React.Component {
       email: ""
     }
   };
+
+  changeHandle = e => {
+    this.setState({
+      friend: {
+        ...this.state.friend,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.addFriend(this.state.friend);
+  };
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div>
             <input
               className="formInput"

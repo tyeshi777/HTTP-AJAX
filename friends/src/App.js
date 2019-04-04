@@ -23,11 +23,26 @@ class App extends Component {
         console.log(err);
       });
   }
+
+  addFriend = (e, friend) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:5000/friends", friend)
+      .then(res => {
+        this.setState({
+          friends: res.data
+        });
+        this.props.history.push("/friendList");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
   render() {
     return (
       <div className="App">
         <FriendList friends={this.state.friends} />
-        <FriendForm />
+        <FriendForm addFriend={this.addFriend} />
       </div>
     );
   }
