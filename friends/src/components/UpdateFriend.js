@@ -1,6 +1,6 @@
 import React from "react";
 
-class FriendForm extends React.Component {
+class UpdateFriendForm extends React.Component {
   state = {
     friend: {
       name: "",
@@ -26,7 +26,7 @@ class FriendForm extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.addFriend(this.state.friend);
+    this.props.updateFriend(this.state.friend);
   };
 
   render() {
@@ -64,7 +64,7 @@ class FriendForm extends React.Component {
             />
           </div>
           <div>
-            <button>Add Friend</button>
+            <button>Update Friend</button>
           </div>
         </form>
       </div>
@@ -72,4 +72,4 @@ class FriendForm extends React.Component {
   }
 }
 
-export default FriendForm;
+export default UpdateFriendForm;
